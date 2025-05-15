@@ -1,4 +1,4 @@
-# Research Model -Traffic-Sign-Recognition-Using-Deep-Neural-Network-and-Skipped-Layer-Architecture
+# Research Model -Traffic Sign Recognition Using Deep Neural Network and Skipped Layer Architecture
 
 This notebook demonstrates a step-by-step process for building a machine learning model
 
