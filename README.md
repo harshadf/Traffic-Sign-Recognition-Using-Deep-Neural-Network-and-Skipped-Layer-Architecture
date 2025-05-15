@@ -1,5 +1,4 @@
-# Traffic-Sign-Recognition-Using-Deep-Neural-Network-and-Skipped-Layer-Architecture
-# Research Model
+# Research Model -Traffic-Sign-Recognition-Using-Deep-Neural-Network-and-Skipped-Layer-Architecture
 
 This notebook demonstrates a step-by-step process for building a machine learning model
 
@@ -18,15 +17,6 @@ This notebook demonstrates a step-by-step process for building a machine learnin
 12. [Save Model](#save-model)
 13. [Test Model](#test-model)
 
-
-## Mount Google Drive
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-
-```
-
-Explanation: Connects Google Drive to the Colab environment to access files stored in the drive.
 
 ## Clone Dataset Repository
 ```python
