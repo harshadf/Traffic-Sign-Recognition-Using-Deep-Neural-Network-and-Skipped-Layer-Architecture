@@ -3,19 +3,18 @@
 This notebook demonstrates a step-by-step process for building a machine learning model
 
 ## Table of Contents
-1. [Mount Google Drive](#mount-google-drive)
-2. [Clone Dataset Repository](#clone-dataset-repository)
-3. [Install Keras](#install-keras)
-4. [Import Libraries](#import-libraries)
-5. [Load Data](#load-data)
-6. [Data Preprocessing](#data-preprocessing)
-7. [Data Augmentation](#data-augmentation)
-8. [Normalize Data](#normalize-data)
-9. [Build Model](#build-model)
-10. [Compile Model](#compile-model)
-11. [Model Training](#model-training)
-12. [Save Model](#save-model)
-13. [Test Model](#test-model)
+1. [Clone Dataset Repository](#clone-dataset-repository)
+2. [Install Keras](#install-keras)
+3. [Import Libraries](#import-libraries)
+4. [Load Data](#load-data)
+5. [Data Preprocessing](#data-preprocessing)
+6. [Data Augmentation](#data-augmentation)
+7. [Normalize Data](#normalize-data)
+8. [Build Model](#build-model)
+9. [Compile Model](#compile-model)
+10. [Model Training](#model-training)
+11. [Save Model](#save-model)
+12. [Test Model](#test-model)
 
 
 ## Clone Dataset Repository
@@ -69,9 +68,7 @@ np.random.seed(0)
 ```
 Explanation: Sets the random seed for reproducibility.
 
-The purpose of np.random.seed(0) is to ensure reproducibility in your code by fixing the random number generator's starting point.
-
-### Why is this important?
+The purpose of np.random.seed(0) is to ensure reproducibility in the code by fixing the random number generator's starting point.
 Many machine learning and deep learning processes rely on randomness, such as:
 
 - Weight initialization in neural networks
@@ -83,10 +80,6 @@ Many machine learning and deep learning processes rely on randomness, such as:
 - Dropout layers
 
 If you don’t set a seed, each run of your code will produce different random numbers, leading to inconsistent results.
-
-### What does np.random.seed(0) do?
-
-It initializes NumPy’s random number generator with a fixed seed (0 in this case).
 
 This ensures that every time you run your code, the "random" numbers generated will be the same.
 
@@ -136,8 +129,6 @@ y_train.shape = (34799, 1)
 
 Purpose: Ensures labels are in a 2D format (useful for some models or loss functions).
 
-Some versions of Keras/TensorFlow expect labels in shape (n_samples, 1) rather than (n_samples,).
-
 ### Why Validation Data?
 
 Used to monitor model performance during training and prevent overfitting.
@@ -160,8 +151,6 @@ Explanation: Loads class names from a CSV file and prints them.
 
 ### Loading the CSV File
 Purpose: Reads the signnames.csv file into a Pandas DataFrame.
-
-pd.read_csv() is a Pandas function that parses a CSV file and stores it in a tabular format (DataFrame).
 
 The file signnames.csv typically contains two columns:
 
@@ -224,8 +213,6 @@ y_test_one_hot = to_categorical(y_test)
 y_val_one_hot = to_categorical(y_val)
 
 Purpose: Converts integer labels into one-hot encoded vectors (required for multi-class classification in Keras/TensorFlow).
-
-If y_train[0] = 0, its one-hot version becomes [1, 0, 0, ..., 0] (length = 43 for GTSRB).
 
 #### Why One-Hot Encoding?
 
@@ -416,7 +403,7 @@ The model uses two parallel convolutional pathways that process the input image 
 #### Input Layer
 Defines the input tensor shape matching GTSRB image dimensions.
 
-#### Pathway 1
+#### Path 1
 ```python
 x1 = Conv2D(filters=60, kernel_size=[5,5], activation='relu')(input_layer)
 x1 = Conv2D(60, [5,5], activation='relu')(x1)
@@ -443,7 +430,7 @@ Reduces spatial dimensions by half (compression).
 ##### Flatten: 
 Converts 3D feature maps to 1D vector for dense layers.
 
-#### Pathway 2
+#### Path 2
 ```python
 x2 = Conv2D(60, [5,5], activation='relu')(input_layer)
 x2 = Conv2D(60, [5,5], activation='relu')(x2)
